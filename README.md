@@ -303,8 +303,29 @@ cd template-project
 
 To compile in the command line
 ```
-pipenv shell 
+pipenv shell
+
 # This must be run the template-project dir
 # or whatever you rename it to)
 scons build # or whatever target
+```
+
+When you rename the project, you must rename the location for the 
+requirements.txt in the line where it does cd ../../template-project.
+
+Change template-project to the new dir name
+
+```
+install_pipenv_env()
+{
+   # This is needed because this is what the taproot devs use
+   # One majory reason is that the modm uses has_key() which got deprecated
+   # in later versions of python 3 
+   # Python 3.10 is used for the docker container along with a more recent
+   # Version of gmock 3.17 to prevent a semgentation fault error on unit tests
+   # It is clear that python does not use semantic versioning that well
+   cd ../../template-project
+   pipenv install --python ~/.pyenv/versions/3.8.10/bin/python3
+   pipenv run pip install -r requirements.txt
+}
 ```
