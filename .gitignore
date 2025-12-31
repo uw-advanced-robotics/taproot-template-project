@@ -1,5 +1,9 @@
 *.pyc
 
+# Ignore setup script artifacts
+./build-util/environment-setup-scripts/Pipfile
+./build-util/environment-setup-scripts/Pipfile.lock
+
 template-project/build
 template-project/Pipfile.lock
 project.xml.log
