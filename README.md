@@ -290,3 +290,21 @@ Usage: scons <target> [profile=<debug|release|fast>] [robot=TARGET_<ROBOT_TYPE>]
         - <ROBOT_TYPE> must be one of the following:
             - STANDARD, DRONE, ENGINEER, SENTRY, HERO:
 ```
+
+## Ubuntu Setup Script
+
+```
+cd build/build-environment-setup-scripts
+./ubuntu-environment-install.sh
+
+cd ../../
+cd template-project
+```
+
+To compile in the command line
+```
+pipenv shell 
+# This must be run the template-project dir
+# or whatever you rename it to)
+scons build # or whatever target
+```
