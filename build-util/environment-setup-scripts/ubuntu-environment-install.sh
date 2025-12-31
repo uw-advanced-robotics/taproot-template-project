@@ -71,7 +71,7 @@ install_pipenv_env()
    # Python 3.10 is used for the docker container along with a more recent
    # Version of gmock 3.17 to prevent a semgentation fault error on unit tests
    # It is clear that python does not use semantic versioning that well
-   cd ../../fang-mcb-project
+   cd ../../template-project
    pipenv install --python ~/.pyenv/versions/3.8.10/bin/python3
    pipenv run pip install -r requirements.txt
 }
